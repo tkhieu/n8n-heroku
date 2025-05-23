@@ -4,7 +4,9 @@ USER root
 
 WORKDIR /home/node/packages/cli
 
-RUN npm install -g n8n-nodes-dataforseo
+RUN mkdir -p /home/root/.n8n/nodes
+
+RUN npm install n8n-nodes-dataforseo --prefix /home/root/.n8n/nodes
 
 ENTRYPOINT []
 
