@@ -13,7 +13,6 @@ RUN \
                  n8n-nodes-chatwoot
         
 ENV N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true
-ENV EXECUTIONS_MODE=queue
 
 COPY ./entrypoint.sh /
 RUN chmod +x /entrypoint.sh
