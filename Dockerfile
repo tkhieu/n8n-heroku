@@ -9,7 +9,7 @@ ENTRYPOINT []
 RUN \
   mkdir -p /home/node/.n8n/nodes && \
   cd /home/node/.n8n/nodes && \
-  npm install -S n8n-nodes-dataforseo
+  npm install -S n8n-nodes-dataforseo n8n-nodes-mcp
         
 ENV N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true
 

@@ -13,13 +13,7 @@ services:
       - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
       - NODE_FUNCTION_ALLOW_EXTERNAL_FUNCTIONS=true
       - N8N_RUNNERS_ENABLED=true
-      - EXECUTIONS_MODE=queue
-      - OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS=true
       - NODE_ENV=production
-      - QUEUE_BULL_REDIS_HOST=redis
-      - QUEUE_BULL_REDIS_PORT=6379
-    volumes:
-      - n8n_data:/home/node/.n8n
     depends_on:
       - postgres
       - redis
@@ -63,6 +57,5 @@ networks:
     driver: bridge
 
 volumes:
-  n8n_data:
   postgres_data:
   redis_data: 
