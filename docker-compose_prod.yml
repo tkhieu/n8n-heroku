@@ -17,7 +17,9 @@ services:
       - n8n-network
 
   caddy:
-    image: caddy:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.caddy
     restart: unless-stopped
     ports:
       - "80:80"
@@ -26,7 +28,6 @@ services:
     cap_add:
       - NET_ADMIN
     volumes:
-      - ./caddy:/etc/caddy
       - caddy_data:/data
       - caddy_config:/config
     networks:
