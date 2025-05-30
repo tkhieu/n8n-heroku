@@ -54,3 +54,4 @@ volumes:
   postgres_data:
   redis_data:
   caddy_data:
+    external: true
