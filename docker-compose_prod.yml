@@ -26,6 +26,7 @@ services:
     cap_add:
       - NET_ADMIN
     volumes:
+      - $PWD/caddy:/etc/caddy
       - caddy_data:/data
       - caddy_config:/config
     networks:
