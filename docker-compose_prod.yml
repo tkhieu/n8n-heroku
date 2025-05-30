@@ -7,7 +7,6 @@ services:
       - N8N_PORT=5678
       - N8N_PROTOCOL=https
       - NODE_ENV=production
-      - N8N_HOST=n8n.onrise.dev
     env_file:
       - stack.env
     depends_on:
