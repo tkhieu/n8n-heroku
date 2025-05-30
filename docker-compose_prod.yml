@@ -24,7 +24,7 @@ services:
       - "443:443"
     volumes:
       - caddy_data:/data
-      - caddy_config/Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy_config/Caddyfile:/etc/caddy/Caddyfile
     networks:
       - n8n-network
     depends_on:
