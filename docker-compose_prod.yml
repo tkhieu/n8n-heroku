@@ -26,9 +26,9 @@ services:
     cap_add:
       - NET_ADMIN
     volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
       - caddy_data:/data
       - caddy_config:/config
-      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
     networks:
       - n8n-network
     depends_on:
