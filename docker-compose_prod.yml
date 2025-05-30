@@ -22,11 +22,13 @@ services:
     ports:
       - "80:80"
       - "443:443"
+      - "443:443/udp"
+    cap_add:
+      - NET_ADMIN
     volumes:
       - caddy_data:/data
-      - type: bind
-        source: ./caddy_config/Caddyfile
-        target: /etc/caddy/Caddyfile
+      - caddy_config:/config
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
     networks:
       - n8n-network
     depends_on:
@@ -49,3 +51,4 @@ networks:
 volumes:
   redis_data:
   caddy_data:
+  caddy_config:
