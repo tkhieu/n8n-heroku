@@ -31,8 +31,8 @@ services:
       - "443:443"
     volumes:
       - caddy_data:/data
-      - ${DATA_FOLDER}/caddy_config:/config
-      - ${DATA_FOLDER}/caddy_config/Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy_config:/config
+      - ./caddy_config/Caddyfile:/etc/caddy/Caddyfile:ro
     networks:
       - n8n-network
 
