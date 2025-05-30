@@ -28,7 +28,7 @@ services:
     volumes:
       - caddy_data:/data
       - caddy_config:/config
-      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy/Caddyfile:/etc/caddy/Caddyfile:ro
     networks:
       - n8n-network
     depends_on:
