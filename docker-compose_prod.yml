@@ -18,7 +18,6 @@ services:
       - N8N_PROTOCOL=https
       - NODE_ENV=production
     depends_on:
-      - postgres
       - redis
     restart: unless-stopped
     networks:
