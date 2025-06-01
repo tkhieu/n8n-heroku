@@ -2,7 +2,8 @@ FROM n8nio/n8n:latest
 
 USER root
 
-RUN apt-get update && apt-get install openssl -y
+# No cache
+RUN apk update && apk add openssl --no-cache
 
 USER node
 
