@@ -1,10 +1,5 @@
 FROM n8nio/n8n:latest
 
-USER root
-
-# No cache
-RUN apk update && apk add openssl --no-cache
-
 USER node
 
 WORKDIR /home/node/packages/cli
