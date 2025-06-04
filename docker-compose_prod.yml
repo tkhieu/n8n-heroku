@@ -20,12 +20,8 @@ services:
     image: postgres:15
     ports:
       - "5432:5432"
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=n8n
-      - POSTGRES_DB=n8n
-      - POSTGRES_NON_ROOT_USER=n8n
-      - POSTGRES_NON_ROOT_PASSWORD=n8n
+    env_file:
+      - stack.env
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
