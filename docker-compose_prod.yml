@@ -27,7 +27,15 @@ services:
     restart: unless-stopped
     networks:
       - n8n-network
-  
+
+  postgres-backup-s3:
+    env_file:
+      - stack.env
+    image: itbm/postgres-backup-s3
+    restart: unless-stopped
+    networks:
+      - n8n-network
+
   adminer:
     image: adminer
     restart: always
