@@ -11,6 +11,28 @@ services:
       - stack.env
     depends_on:
       - redis
+      - postgres
+    restart: unless-stopped
+    networks:
+      - n8n-network
+
+  postgres:
+    image: postgres:15
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=n8n
+      - POSTGRES_DB=n8n
+      - POSTGRES_NON_ROOT_USER=n8n
+      - POSTGRES_NON_ROOT_PASSWORD=n8n
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U n8n"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     restart: unless-stopped
     networks:
       - n8n-network
@@ -50,3 +72,4 @@ volumes:
   redis_data:
   caddy_data:
   caddy_config:
+  postgres_data:
