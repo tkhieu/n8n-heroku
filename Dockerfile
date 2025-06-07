@@ -14,4 +14,5 @@ RUN \
 ENV N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true
 
 COPY ./entrypoint.sh /
+COPY ./entrypoint-worker.sh /
 CMD ["/entrypoint.sh"]
